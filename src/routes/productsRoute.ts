@@ -1,9 +1,8 @@
 import { Router } from 'express';
-
-/* const productController = require('../controllers/productsController'); */
+import productsController from '../controllers/productsController';
 
 const productsRoute = Router();
 
-productsRoute.get('/', () => console.log('deu'));
+productsRoute.get('/', productsController.getAll);
 
 export default productsRoute;
