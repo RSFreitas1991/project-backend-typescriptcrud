@@ -8,7 +8,7 @@ const usersController = {
       const token = await usersService.addUser(user);
       res.status(201).json({ token });
     } catch (error: any) {
-      res.status(201).json({ message: error.message });
+      res.status(404).json({ message: error.message });
     }
   },
 };
