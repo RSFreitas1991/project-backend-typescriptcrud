@@ -9,6 +9,7 @@ const secret: any = process.env.JWT_SECRET;
 const usersService = {
   createToken(user: any) {
     console.log(user);
+    console.log(secret);
     const token = jwt.sign(user, secret);
     console.log(token);
     return token;
