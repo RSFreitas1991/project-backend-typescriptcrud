@@ -8,7 +8,9 @@ const secret: any = process.env.JWT_SECRET;
 
 const usersService = {
   createToken(user: any) {
-    const token = jwt.sign(user.username, secret);
+    console.log(user);
+    const token = jwt.sign(user, secret);
+    console.log(token);
     return token;
   },
   async addUser(user: any) {
