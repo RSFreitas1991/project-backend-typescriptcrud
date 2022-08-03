@@ -1,8 +1,10 @@
 import express from 'express';
+import * as dotenv from 'dotenv';
 import ordersRoute from './routes/ordersRoute';
 import productsRoute from './routes/productsRoute';
 import usersRoute from './routes/usersRoute';
 
+dotenv.config();
 const app = express();
 
 app.use(express.json());
