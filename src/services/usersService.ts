@@ -1,9 +1,7 @@
 import jwt from 'jsonwebtoken';
-import * as dotenv from 'dotenv';
 import usersModel from '../models/usersModel';
 
-dotenv.config();
-const secret: any = process.env.JWT_SECRET;
+const secret = 'nossaSenhaSecreta';
 
 const usersService = {
   createToken(user: any) {
