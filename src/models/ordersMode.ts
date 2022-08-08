@@ -7,10 +7,7 @@ const ordersModel = {
     return rows;
   },
   async getProductsOrderIdList() {
-    const sql = `SELECT 
-    id,
-      orderId
-   FROM Trybesmith.Products;`;
+    const sql = 'SELECT id, orderId FROM Trybesmith.Products;';
     const [rows] = await db.query(sql);
     return rows;
   },
