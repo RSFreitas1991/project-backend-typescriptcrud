@@ -1,9 +1,10 @@
 import ordersModel from '../models/ordersMode';
+/* import OrderList from '../interfaces/orderListInterface'; */
 
 const ordersService = {
   async getAll() {
-    const list: any = await ordersModel.getAll();
-    const productsId: any = await ordersModel.getProductsOrderIdList();
+    const list = await ordersModel.getAll();
+    const productsId = await ordersModel.getProductsOrderIdList();
     const result: any = [];
     for (let i = 0; i < productsId.length; i += 1) {
       if (!result.some((index: any) => index.orderId === productsId[i].orderId)) {
@@ -13,7 +14,8 @@ const ordersService = {
         };
         result.push(arrayTransform);
       } else {
-        const place: number = result.findIndex((placeIndex: any) => placeIndex.orderId === 2);
+        const place: number = result.findIndex((placeIndex: any) => placeIndex
+          .orderId === productsId[i].orderId);
         result[place].id = [...result[place].id, productsId[i].id];
       }
     }
