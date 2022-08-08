@@ -1,5 +1,5 @@
 import db from './connection';
-import OrderList from '../interfaces/orderListInterface';
+import ProductsList from '../interfaces/productsListInterface';
 
 const ordersModel = {
   async getAll() {
@@ -7,10 +7,10 @@ const ordersModel = {
     const [rows] = await db.query(sql);
     return rows;
   },
-  async getProductsOrderIdList(): Promise<OrderList[]> {
+  async getProductsOrderIdList(): Promise<ProductsList[]> {
     const sql = 'SELECT id, orderId FROM Trybesmith.Products;';
     const [rows] = await db.query(sql);
-    return rows as OrderList[];
+    return rows as ProductsList[];
   },
 };
 

@@ -1,6 +1,6 @@
-interface OrderList {
+interface ProductsList {
   id: number | number[],
   orderId: number | null,
 }
 
-export default OrderList;
+export default ProductsList;
