@@ -1,10 +1,38 @@
-# :construction: README em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto.
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+# Typescrit Crud
+
+# Contexto
+O objetivo deste projeto é a criação de um CRUD em uma API REST que simula a gestão de uma loja fictícia utilizando typescrit e validação de JSON Web Token .
+> O projeto conta com Docker Compose pronto para subir tanto a aplicação quanto o mysql server.
+## Rotas disponíveis
+
+> GET: http://localhost:3000/products  
+> GET: http://localhost:3000/products/:id  
+> PUT: http://localhost:3000/products/:id  
+> DELETE: http://localhost:3000/products/:id  
+> POST: http://localhost:3000/products/  
+> GET: http://localhost:3000/sales/:id  
+> GET: http://localhost:3000/sales/   
+> POST: http://localhost:3000/sales/:id  
+
+## Técnologias usadas
+
+> Desenvolvido usando: Express.JS, mySQL, Typescript 4.8 e Docker
+
+## Instalando Dependências
+
+```bash
+npm install
+``` 
+## Executando aplicação
+
+> Deve ser configurado um arquivo .env com as seguintes variáveis de ambiente:  
+MYSQL_HOST,  
+MYSQL_USER,  
+MYSQL_PASSWORD,  
+MYSQL_DATABASE,
+PORT,
+JWT-SECRET
+
+  ```
+npm migration && npm seed && npm start
+  ```
