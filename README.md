@@ -37,3 +37,11 @@ JWT-SECRET
   ```
 npm migration && npm seed && npm start
   ```
+  
+## Executando aplicação com docker compose
+
+> Dentro da pasta da aplicação execute:
+
+  ```
+docker compose up -d
+  ```
