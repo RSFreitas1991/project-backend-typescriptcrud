@@ -6,9 +6,9 @@ O objetivo deste projeto é a criação de um CRUD em uma API REST que simula a 
 ## Rotas disponíveis
 
 > GET: http://localhost:3005/products  
-> POST: http://localhost:3005/products 
-> GET: http://localhost:3005/orders
-> POST: http://localhost:3005/users
+> POST: http://localhost:3005/products  
+> GET: http://localhost:3005/orders  
+> POST: http://localhost:3005/users  
 
 ## Técnologias usadas
 
