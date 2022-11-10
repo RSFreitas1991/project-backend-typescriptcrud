@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+  node:
+    container_name: app_backend
+    build: .
+    ports:
+      - 3005:3005
+    platform: linux/x86_64
+    working_dir: /app-backend
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      # Os dados abaixo se referem ao container `db`
+      - MYSQL_HOST=db
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=123456
+      - MYSQL_DATABASE=Trybesmith
+      - MYSQL_PORT=3306
+      - PORT=3005
+      - JWT_SECRET=suaSenhaSecreta
+    healthcheck:
+      test: ["CMD", "lsof", "-t", "-i:3001"] # Caso utilize outra porta interna para o back, altere ela aqui também
+      timeout: 10s
+      retries: 5
+
+  # Serviço que irá rodar o banco de dados
+  db:
+    image: mysql:8.0.21
+    container_name: db
+    platform: linux/x86_64
+    ports:
+      - 3006:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+    restart: 'always'
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"] # Deve aguardar o banco ficar operacional
+      timeout: 10s
+      retries: 5
+    cap_add:
+      - SYS_NICE # Deve omitir alertas menores
