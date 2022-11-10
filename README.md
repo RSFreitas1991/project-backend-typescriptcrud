@@ -1,28 +1,25 @@
 # Typescrit Crud
 
 # Contexto
-O objetivo deste projeto é a criação de um CRUD em uma API REST que simula a gestão de uma loja fictícia utilizando typescrit e validação de JSON Web Token .
+O objetivo deste projeto é a criação de um CRUD em uma API REST que simula a gestão de uma loja fictícia utilizando typescript e validação de JSON Web Token .
 > O projeto conta com Docker Compose pronto para subir tanto a aplicação quanto o mysql server.
 ## Rotas disponíveis
 
-> GET: http://localhost:3000/products  
-> GET: http://localhost:3000/products/:id  
-> PUT: http://localhost:3000/products/:id  
-> DELETE: http://localhost:3000/products/:id  
-> POST: http://localhost:3000/products/  
-> GET: http://localhost:3000/sales/:id  
-> GET: http://localhost:3000/sales/   
-> POST: http://localhost:3000/sales/:id  
+> GET: http://localhost:3005/products  
+> POST: http://localhost:3005/products 
+> GET: http://localhost:3005/orders
+> POST: http://localhost:3005/users
 
 ## Técnologias usadas
 
-> Desenvolvido usando: Express.JS, mySQL, Typescript 4.8 e Docker Compose
+> Desenvolvido usando: Express.JS, mySQL, Typescript 4.8 e Docker Compose 3.9
 
 ## Instalando Dependências
 
 ```bash
 npm install
 ``` 
+* Para popular o banco de dados execute a query "Trybesmith.sql" na pasta raiz do projeto.
 ## Executando aplicação
 
 > Deve ser configurado um arquivo .env com as seguintes variáveis de ambiente:  
@@ -35,7 +32,7 @@ PORT,
 JWT-SECRET  
 
   ```
-npm migration && npm seed && npm start
+ npm start
   ```
   
 ## Executando aplicação com docker compose
