@@ -16,7 +16,7 @@ O objetivo deste projeto é a criação de um CRUD em uma API REST que simula a 
 
 ## Técnologias usadas
 
-> Desenvolvido usando: Express.JS, mySQL, Typescript 4.8 e Docker
+> Desenvolvido usando: Express.JS, mySQL, Typescript 4.8 e Docker Compose
 
 ## Instalando Dependências
 
@@ -29,9 +29,10 @@ npm install
 MYSQL_HOST,  
 MYSQL_USER,  
 MYSQL_PASSWORD,  
-MYSQL_DATABASE,
-PORT,
-JWT-SECRET
+MYSQL_DATABASE,  
+MYSQL_PORT,  
+PORT,  
+JWT-SECRET  
 
   ```
 npm migration && npm seed && npm start
